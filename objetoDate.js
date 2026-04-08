@@ -31,3 +31,26 @@ console.log("Dia da semana", dataM.getDay()) // 0-Domingo | 6-Sábado
 console.log(Date.now())
 
 console.log(Date(1775588355653)) // Vai exibit a data e horário atual
+
+// ---------------------------------------------------------------------------
+// Também posso formatar a data para o formato brasileiro, usando o método (getDate) para pegar o dia, (getMonth) para pegar o mês e (getFullYear) para pegar o ano. Para os horários, uso (getHours), (getMinutes) e (getSeconds). Para deixar a formatação mais bonita, criei uma função que adiciona um zero à esquerda caso o número seja menor que 10.
+
+function zeroEsquerda(zero){
+    return zero >= 10 ? zero : `0${zero}`
+}
+
+function formatData(data){
+    const dia = zeroEsquerda(dataBrasil.getDate())
+    const mes = zeroEsquerda(dataBrasil.getMonth() + 1)
+    const ano = zeroEsquerda(dataBrasil.getFullYear())
+    const hora = zeroEsquerda(dataBrasil.getHours())
+    const min = zeroEsquerda(dataBrasil.getMinutes())
+    const seg = zeroEsquerda(dataBrasil.getSeconds())
+
+    return `${dia}/${mes}/${ano} ${hora}:${min}:${seg}`
+}
+
+
+const data = new Date()
+const dataBrasil = data
+console.log(formatData(dataBrasil))
