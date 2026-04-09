@@ -1,4 +1,4 @@
-// For in -> Lê os índices
+// For in -> Retorna os índices ou as chaves (arrays, strings, objetos e etc)
 
 const frutas = ["Maça", "Uva", "Pera"]
 
